@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+body {
+  padding: 20px;
+  font-family: "Rubik";
+  color: #333;
+}
+main {
+  width: 600px;
+  margin: 0 auto;
+}
+h1, h2, h3, header {
+  text-align: center;
+}
+header {
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+.book-list > button {
+  width: 100px;
+  margin: 20px auto;
+  display: block;
+}
+.book-list ul {
+  padding: 10px 20px;
+  list-style-type: none;
+  background: #f4f4f4;
+  border-radius: 8px;
+}
+.book-list li {
+  border-bottom: 1px solid #e9e9e9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px  0;
+}
+.book-list li > div {
+  margin-right: auto;
+}
+.book-list li:last-child {
+  border: 0;
+}
+.book-list li h3, .books li p {
+  text-align: left;
+  margin-bottom: 0px;
+  margin-top: 4px;
+}
+.book-list li p {
+  color: #777;
+}
+input, button{
+  padding: 10px;
+  font-family: "Rubik";
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+form {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+form button {
+  margin-left: auto;
+}
+form input {
+  flex-grow: 1;
+  border: 1px solid #e9e9e9;
+  border-radius: 4px;
+}
+.add-book-form{
+  margin-top: 60px;
+}
+button {
+  background: #ef4444;
+  color: white;
+  border: 0;
+}
