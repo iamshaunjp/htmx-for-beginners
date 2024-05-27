@@ -31,7 +31,13 @@ const createHomepageTemplate = () => /*html*/`
               placeholder="author" 
               type="text" 
             />
-            <button hx-post="/books" hx-target=".book-list ul" hx-swap="beforeend">Add</button>
+            <button 
+              hx-post="/books" 
+              hx-target=".book-list ul" 
+              hx-swap="beforeend" 
+              hx-on:click="console.log('new book added', event)"
+              hx-on::after-request="document.querySelector('form').reset()"
+            >Add</button>
           </form>
         </div>
       </main>
