@@ -2,6 +2,7 @@ import express from 'express';
 import createHomepageTemplate from './views/index.js';
 import createListTemplate from './views/list.js';
 import createBookTemplate from './views/book.js';
+import createEditFormTemplate from './views/edit.js';
 import BOOKS_DATA from './data/data.js';
 
 // create app
@@ -43,6 +44,11 @@ app.delete('/books/:id', (req, res) => {
   res.send();
 });
 
+app.get('/books/edit/:id', (req, res) => {
+  const book = BOOKS_DATA.find(b => b.id === req.params.id);
+
+  res.send(createEditFormTemplate(book));
+});
 
 // listen to port
 app.listen(3000, () => {
