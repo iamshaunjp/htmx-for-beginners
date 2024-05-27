@@ -13,31 +13,32 @@ const createHomepageTemplate = () => /*html*/`
 
       <main>
         <div class="book-list">
-          <button hx-get="/books" hx-target=".book-list">Show Books</button>
+          <button hx-get="/books" hx-target=".book-list" hx-trigger="dblclick">Show Books</button>
         </div>
 
         <div class="add-book-form">
           <h2>What do you want to read?</h2>
-          <form>
+          <form
+            hx-post="/books" 
+            hx-target=".book-list ul" 
+            hx-swap="beforeend" 
+            hx-on::after-request="document.querySelector('form').reset()"
+          >
             <input 
               id="title" 
               name="title"
               placeholder="title" 
-              type="text" 
+              type="text"
+              required 
             />
             <input 
               id="author" 
               name="author"
               placeholder="author" 
-              type="text" 
+              type="text"
+              required
             />
-            <button 
-              hx-post="/books" 
-              hx-target=".book-list ul" 
-              hx-swap="beforeend" 
-              hx-on:click="console.log('new book added', event)"
-              hx-on::after-request="document.querySelector('form').reset()"
-            >Add</button>
+            <button>Add</button>
           </form>
         </div>
       </main>
