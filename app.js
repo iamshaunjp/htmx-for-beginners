@@ -44,6 +44,18 @@ app.delete('/books/:id', (req, res) => {
   res.send();
 });
 
+app.put('/books/:id', (req, res) => {
+  const {title, author} = req.body;
+  const {id} = req.params;
+
+  const newBook = {title, author, id};
+
+  const idx = BOOKS_DATA.findIndex(b => b.id === id);
+  BOOKS_DATA[idx] = newBook
+
+  res.send(createBookTemplate(newBook));
+})
+
 app.get('/books/edit/:id', (req, res) => {
   const book = BOOKS_DATA.find(b => b.id === req.params.id);
 
