@@ -36,6 +36,13 @@ app.get('/books/:id', (req, res) => {
   res.send(createBookTemplate(book));
 });
 
+app.delete('/books/:id', (req, res) => {
+  const idx = BOOKS_DATA.findIndex(b => b.id === req.params.id);
+  BOOKS_DATA.splice(idx, 1);
+
+  res.send();
+});
+
 
 // listen to port
 app.listen(3000, () => {
