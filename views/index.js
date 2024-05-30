@@ -18,7 +18,7 @@ const createHomepageTemplate = () => /*html*/`
             name="search"
             placeholder="Search books by title..."
             hx-post="/books/search"
-            hx-trigger="input changed delay:300ms"
+            hx-trigger="keyup changed delay:300ms"
             hx-target=".book-list"
           />
         </div> 
